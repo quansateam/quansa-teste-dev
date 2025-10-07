@@ -13,30 +13,29 @@ Um projeto para avaliação técnica júnior: API REST de categorias já impleme
 ## 🧰 Requisitos
 
 - Node.js 18+
-- npm (ou pnpm/yarn)
+- Yarn
 
 ## 🚀 Como rodar
 
 ```bash
 # 1) Clone o repositório
-git clone <URL_DO_SEU_REPO_PUBLICO>
-cd teste-candidato
+git clone git@github.com:quansateam/quansa-teste-dev.git
 
 # 2) Instale dependências
-npm install
+yarn install
 
 # 3) Configure o banco (SQLite via Prisma)
 # cria o arquivo dev.db e aplica a migração inicial
-npm run migrate
+yarn migrate
 
 # 4) Suba o servidor em modo dev
-npm run dev
+yarn dev
 
 # 5) (Opcional) Popule com dados de teste
-npm run seed
+yarn seed
 ```
 
-**Abra:** http://localhost:3000 (UI de Categorias)
+**Frontend React:** http://localhost:3001 (UI de Categorias)
 
 **Saúde da API:** GET http://localhost:3000/health → `{ "ok": true }`
 
@@ -155,10 +154,14 @@ Crie uma nova página ou seção na interface para gerenciar produtos:
 - Busca e paginação
 - Ações de editar/excluir
 
-### 5. Executar Migração
+### 5. Criar um menu
+
+Crie um menu para Produtos e Categorias
+
+### 6. Executar Migração
 
 ```bash
-npm run migrate
+yarn migrate
 ```
 
 ## 🧪 Exemplos de Teste (cURL)
@@ -176,9 +179,19 @@ curl -X POST http://localhost:3000/products \
 curl 'http://localhost:3000/products?categoryId=1&search=iPhone'
 ```
 
-## 🖥️ Interface Atual
+## 🖥️ Interface
 
-Acesse **http://localhost:3000** para gerenciar categorias.
+### Interface React
+
+Acesse **http://localhost:3001** para gerenciar categorias com a interface React moderna.
+
+**Para executar o frontend React:**
+
+```bash
+cd frontend
+yarn install
+yarn start
+```
 
 **Funcionalidades implementadas:**
 
@@ -187,21 +200,22 @@ Acesse **http://localhost:3000** para gerenciar categorias.
 - ✅ Paginação
 - ✅ Validação com Zod
 - ✅ Interface responsiva
+- ✅ **Interface React moderna**
 
 ## 🧩 Scripts úteis
 
 ```bash
-npm run dev      # sobe com nodemon
-npm run start    # modo produção
-npm run migrate  # prisma migrate dev
-npm run studio   # prisma studio (GUI do DB)
-npm run seed     # popula o banco com dados de teste
+yarn dev      # sobe com nodemon
+yarn start    # modo produção
+yarn migrate  # prisma migrate dev
+yarn studio   # prisma studio (GUI do DB)
+yarn seed     # popula o banco com dados de teste
 ```
 
 ## 🛠️ Solução de problemas
 
 - **Porta 3000 ocupada** → altere a porta no `src/server.js`.
-- **Erro de migração** → delete `prisma/dev.db` e rode `npm run migrate` novamente.
+- **Erro de migração** → delete `prisma/dev.db` e rode `yarn migrate` novamente.
 - **Validação 400** → confira campos obrigatórios e tipos/valores.
 
 ## 📝 Critérios de Avaliação
@@ -215,7 +229,7 @@ npm run seed     # popula o banco com dados de teste
 
 ## 💡 Dicas
 
-- Use o Prisma Studio (`npm run studio`) para visualizar os dados
+- Use o Prisma Studio (`yarn studio`) para visualizar os dados
 - Teste os endpoints com cURL antes de implementar a interface
 - Siga o mesmo padrão das rotas de categorias
 - Considere a experiência do usuário na interface
