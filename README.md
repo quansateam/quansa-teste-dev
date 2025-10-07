@@ -1,4 +1,4 @@
-# Mini CRUD de Produtos – Node + Express + Prisma (SQLite)
+# Mini CRUD de Produtos – Node + React + Express + Prisma (SQLite)
 
 Um projeto para avaliação técnica júnior: API REST de categorias já implementada + **você deve implementar a funcionalidade de produtos** usando as categorias existentes.
 
@@ -8,7 +8,7 @@ Um projeto para avaliação técnica júnior: API REST de categorias já impleme
 - **Express** + CORS
 - **Prisma ORM** + SQLite
 - **Validação** com zod
-- **UI estática** (HTML/CSS/JS puro) servida pelo Express
+- **React** (Frontend moderno)
 
 ## 🧰 Requisitos
 
@@ -17,11 +17,13 @@ Um projeto para avaliação técnica júnior: API REST de categorias já impleme
 
 ## 🚀 Como rodar
 
+### Backend (API)
+
 ```bash
 # 1) Clone o repositório
 git clone git@github.com:quansateam/quansa-teste-dev.git
 
-# 2) Instale dependências
+# 2) Instale dependências do backend
 yarn install
 
 # 3) Configure o banco (SQLite via Prisma)
@@ -35,7 +37,22 @@ yarn dev
 yarn seed
 ```
 
-**Frontend React:** http://localhost:3001 (UI de Categorias)
+### Frontend (React)
+
+```bash
+# Em outro terminal, navegue para a pasta frontend
+cd frontend
+
+# Instale dependências do frontend
+yarn install
+
+# Execute o frontend React
+yarn start
+```
+
+**Interface:** http://localhost:3001 (React Frontend)
+
+**API:** http://localhost:3000 (Backend Express)
 
 **Saúde da API:** GET http://localhost:3000/health → `{ "ok": true }`
 
@@ -181,11 +198,11 @@ curl 'http://localhost:3000/products?categoryId=1&search=iPhone'
 
 ## 🖥️ Interface
 
-### Interface React
+### React Frontend
 
 Acesse **http://localhost:3001** para gerenciar categorias com a interface React moderna.
 
-**Para executar o frontend React:**
+**Para executar o frontend:**
 
 ```bash
 cd frontend
@@ -200,9 +217,11 @@ yarn start
 - ✅ Paginação
 - ✅ Validação com Zod
 - ✅ Interface responsiva
-- ✅ **Interface React moderna**
+- ✅ **Interface React moderna e responsiva**
 
 ## 🧩 Scripts úteis
+
+### Backend
 
 ```bash
 yarn dev      # sobe com nodemon
@@ -212,11 +231,28 @@ yarn studio   # prisma studio (GUI do DB)
 yarn seed     # popula o banco com dados de teste
 ```
 
+### Frontend
+
+```bash
+cd frontend
+yarn start    # inicia o servidor de desenvolvimento React
+yarn build    # build para produção
+yarn test     # executa os testes
+```
+
 ## 🛠️ Solução de problemas
+
+### Backend
 
 - **Porta 3000 ocupada** → altere a porta no `src/server.js`.
 - **Erro de migração** → delete `prisma/dev.db` e rode `yarn migrate` novamente.
 - **Validação 400** → confira campos obrigatórios e tipos/valores.
+
+### Frontend
+
+- **Porta 3001 ocupada** → o React automaticamente tentará a próxima porta disponível.
+- **Erro de conexão com API** → verifique se o backend está rodando na porta 3000.
+- **Erro de build** → delete `node_modules` e rode `yarn install` novamente.
 
 ## 📝 Critérios de Avaliação
 
@@ -229,10 +265,18 @@ yarn seed     # popula o banco com dados de teste
 
 ## 💡 Dicas
 
+### Backend
+
 - Use o Prisma Studio (`yarn studio`) para visualizar os dados
 - Teste os endpoints com cURL antes de implementar a interface
 - Siga o mesmo padrão das rotas de categorias
+- Implemente validações com Zod
+
+### Frontend
+
+- O React está configurado com proxy para a API (porta 3000)
+- Use `yarn start` no frontend para desenvolvimento
+- A interface é responsiva e moderna
 - Considere a experiência do usuário na interface
-- Implemente validações tanto no backend quanto no frontend
 
 **Boa sorte! 🚀**
