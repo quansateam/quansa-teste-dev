@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Eletrônicos",
+      "description": "Produtos eletrônicos e tecnológicos"
+    },
+    {
+      "name": "Roupas",
+      "description": "Vestuário e acessórios"
+    },
+    {
+      "name": "Casa e Jardim",
+      "description": "Produtos para casa, decoração e jardim"
+    },
+    {
+      "name": "Esportes",
+      "description": "Equipamentos e acessórios esportivos"
+    },
+    {
+      "name": "Livros",
+      "description": "Livros, revistas e materiais educativos"
+    },
+    {
+      "name": "Beleza e Saúde",
+      "description": "Produtos de beleza, higiene e saúde"
+    }
+  ]
+}

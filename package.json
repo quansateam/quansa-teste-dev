@@ -1,0 +1,32 @@
+{
+  "name": "mini-crud-produtos",
+  "version": "1.0.0",
+  "description": "Mini CRUD de Produtos - Node + Express + Prisma (SQLite)",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio",
+    "seed": "node scripts/seed.js"
+  },
+  "keywords": [
+    "crud",
+    "products",
+    "express",
+    "prisma",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "prisma": "^5.7.0"
+  }
+}
