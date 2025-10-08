@@ -17,27 +17,35 @@ Um projeto para avaliação técnica júnior: API REST de categorias já impleme
 
 ## 🚀 Como rodar
 
-### Backend (API)
+### 1. Fork do Repositório
+
+1. **Acesse**: https://github.com/quansateam/quansa-teste-dev
+2. **Clique em "Fork"** (canto superior direito)
+3. **Clone seu fork**:
 
 ```bash
-# 1) Clone o repositório
-git clone git@github.com:quansateam/quansa-teste-dev.git
+git clone git@github.com:SEU_USERNAME/quansa-teste-dev.git
+cd quansa-teste-dev
+```
 
-# 2) Instale dependências do backend
+### 2. Backend (API)
+
+```bash
+# Instale dependências do backend
 yarn install
 
-# 3) Configure o banco (SQLite via Prisma)
+# Configure o banco (SQLite via Prisma)
 # cria o arquivo dev.db e aplica a migração inicial
 yarn migrate
 
-# 4) Suba o servidor em modo dev
+# Suba o servidor em modo dev
 yarn dev
 
-# 5) (Opcional) Popule com dados de teste
+# (Opcional) Popule com dados de teste
 yarn seed
 ```
 
-### Frontend (React)
+### 3. Frontend (React)
 
 ```bash
 # Em outro terminal, navegue para a pasta frontend
@@ -278,5 +286,37 @@ yarn test     # executa os testes
 - Use `yarn start` no frontend para desenvolvimento
 - A interface é responsiva e moderna
 - Considere a experiência do usuário na interface
+
+## 📤 Como submeter sua solução
+
+### 1. Commit e Push das alterações
+
+```bash
+# Adicione suas alterações
+git add .
+
+# Faça commit com uma mensagem descritiva
+git commit -m "feat: implementa CRUD de produtos com interface React"
+
+# Envie para seu fork
+git push origin main
+```
+
+### 2. Criar Pull Request
+
+1. **Acesse seu fork** no GitHub
+2. **Clique em "Compare & pull request"**
+3. **Preencha o título**: "Implementação do CRUD de Produtos"
+4. **Descreva suas implementações** na descrição
+5. **Envie o Pull Request**
+
+### 3. O que será avaliado
+
+- ✅ **Funcionalidade**: Todos os endpoints CRUD funcionando
+- ✅ **Validação**: Validação adequada com Zod
+- ✅ **Relacionamentos**: Produtos corretamente relacionados com categorias
+- ✅ **Interface**: Interface funcional para gerenciar produtos
+- ✅ **Código**: Código limpo, organizado e bem estruturado
+- ✅ **Tratamento de Erros**: Tratamento adequado de erros 400, 404, 500
 
 **Boa sorte! 🚀**
