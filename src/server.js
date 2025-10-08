@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const categoriesRoutes = require("./routes/categories.routes");
+const productsRoutes = require("./routes/products.routes");
 const errorHandler = require("./middlewares/error");
 
 const app = express();
@@ -17,6 +18,7 @@ app.get("/health", (req, res) => {
 
 // Rotas de categorias
 app.use("/categories", categoriesRoutes);
+app.use("/products", productsRoutes);
 
 // Middleware de erro (deve ser o último)
 app.use(errorHandler);
